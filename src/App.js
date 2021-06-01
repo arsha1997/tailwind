@@ -1,8 +1,11 @@
 import './App.css';
 
-import Content from './components/Content';
+import { Route, Switch } from 'react-router';
+
+import About from './pages/about';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
+import Home from './pages';
+import Menu from './pages/menu';
 import Navbar from './components/Navbar';
 import React from 'react';
 
@@ -10,8 +13,10 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Content />
+      <Switch />
+      <Route path="/" exact component={Home} />
+      <Route path="/about" exact component={About} />
+      <Route path="/menu" exact component={Menu} />
       <Footer />
     </>
   );
